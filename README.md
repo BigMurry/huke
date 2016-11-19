@@ -1,4 +1,6 @@
 # huke
+[![NPM](https://nodei.co/npm/huke.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/huke/)
+
 A simple webhook module
 
 ## Install
