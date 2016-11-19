@@ -14,7 +14,7 @@ npm test
 ```
 ## Basic Logic
 
-By subscribing an event with the webhook and providing a url, when the webhook triger the corresponding event, a POST request is send to the binding url.
+By subscribing an event with the webhook and providing a url, when the webhook triger the corresponding event, a POST request is sent to the binding url.
 
 ## Quick Usage
 ```javascript
