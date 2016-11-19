@@ -1,5 +1,5 @@
 {
-  "name": "webhook",
+  "name": "huke",
   "version": "1.0.0",
   "description": "a very simple webhook module",
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BigMurry/webhook.git"
+    "url": "git+https://github.com/BigMurry/huke.git"
   },
   "keywords": [
     "webhook",
@@ -18,9 +18,9 @@
   "author": "bigmurry",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/BigMurry/webhook/issues"
+    "url": "https://github.com/BigMurry/huke/issues"
   },
-  "homepage": "https://github.com/BigMurry/webhook#readme",
+  "homepage": "https://github.com/BigMurry/huke#readme",
   "devDependencies": {
     "babel-preset-es2015": "^6.18.0",
     "chai": "^3.5.0",
