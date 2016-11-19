@@ -3,17 +3,25 @@
 
 A simple webhook module
 
-## Install
-```
+## Install and test
+```shell
+# install from npm
 npm install huke
+
+# run all the tests
+npm install
+npm test
 ```
+## Basic Logic
+
+By subscribing an event with the webhook and providing a url, when the webhook triger the corresponding event, a POST request is send to the binding url.
 
 ## Quick Usage
 ```javascript
 import Hook from 'huke'
 const hook = new Hook()
 hook.subscribe('event1', 'http://localhost/aftertriger')
-hook.triger('event1')
+hook.triger('event1', {a: 1, b: 2})
 ```
 
 ## Reference
@@ -39,7 +47,7 @@ hook.subscribe('event1', 'http://localhost/aftertriger')
 ```
 ### `triger`
 ```javascript
-hook.triger('event1', 'http://localhost/aftertriger')
+hook.triger('event1', {a: 1, b: 2})
 ```
 ### `use`
 ```javascript
