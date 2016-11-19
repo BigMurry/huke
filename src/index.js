@@ -1,5 +1,6 @@
 import EventEmitter from 'events'
 import http from 'http'
+import https from 'https'
 import url from 'url'
 import Middleware from './middleware'
 
@@ -45,15 +46,15 @@ function init (ctx, args) {
 
 function request (ctx, times) {
   let retry = 0
-  const send = (opt, data) => {
-    const req = http.request(opt)
+  const send = (protocol, opt, data) => {
+    const req = protocol.request(opt)
     req.on('error', (error) => {
+      ++retry
       if (retry > times) {
         console.log(`reply to hook url failed: ${error}`)
         return
       }
-      send(opt, data)
-      ++retry
+      send(protocol, opt, data)
     })
     req.write(JSON.stringify(data))
     req.end()
@@ -71,6 +72,7 @@ function request (ctx, times) {
       }
     }
     ctx.middleware.run(opt)
-    send(opt, data)
+    const protocol = urlObj.protocol === 'https:' ? https : http
+    send(protocol, opt, data)
   }
 }
